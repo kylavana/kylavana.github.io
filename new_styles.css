@@ -264,14 +264,18 @@ text-align:right;
   -webkit-transition: all .3s ease;
   transition: all .3s ease
 }
-
 .content:hover{
 opacity:.7;
 }
 .content.doflip{
  opacity:1;
 }
-
+.nojs-a{
+  display:block;
+  position:absolute;
+  width:100%;
+  height:100%;
+}
 .doflip .frontface{
   visibility:hidden;
 }
