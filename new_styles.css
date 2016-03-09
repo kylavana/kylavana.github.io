@@ -266,7 +266,7 @@ text-align:right;
 }
 
 .content:hover{
-opacity:.75;
+opacity:.7;
 }
 .content.doflip{
  opacity:1;
@@ -349,7 +349,8 @@ opacity:.75;
 
 .back_link2:hover,
 .back_link:hover {
-  text-decoration: underline
+  text-decoration: underline;
+  cursor:pointer;
 }
 
 .back_foot {
