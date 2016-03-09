@@ -48,7 +48,7 @@
     </div>
     <div class='container' style='margin-bottom:30px; margin-top:20px;'>
       <div class=one-third>
-        <div class=content tabindex=1>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_utmb.jpg></div>
           </div>
@@ -62,7 +62,7 @@
             <div class="back_foot date">May, 2014</div>
           </div>
         </div>
-        <div class=content tabindex=2>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_aeieng.jpg></div>
           </div>
@@ -77,7 +77,7 @@
             <div class="back_foot date">2014-2015</div>
           </div>
         </div>
-        <div class=content tabindex=3>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_comp.jpg></div>
           </div>
@@ -91,7 +91,7 @@
             <div class="back_foot date">2013</div>
           </div>
         </div>
-        <div class=content tabindex=4>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_phone.jpg></div>
           </div>
@@ -107,7 +107,7 @@
         </div>
       </div>
       <div class=one-third>
-        <div class=content tabindex=5>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_abso.jpg></div>
           </div>
@@ -121,7 +121,7 @@
             <div class="back_foot date">2010</div>
           </div>
         </div>
-        <div class=content tabindex=6>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_lurie.jpg></div>
           </div>
@@ -135,7 +135,7 @@
             <div class="back_foot date">2012</div>
           </div>
         </div>
-        <div class=content tabindex=7>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_ib.jpg></div>
           </div>
@@ -149,7 +149,7 @@
             <div class="back_foot date">2016</div>
           </div>
         </div>
-        <div class=content tabindex=8>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_vgame.jpg></div>
           </div>
@@ -166,7 +166,7 @@
         </div>
       </div>
       <div class=one-third>
-        <div class=content tabindex=9>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_fist.jpg></div>
           </div>
@@ -180,7 +180,7 @@
             <div class="back_foot date">2008</div>
           </div>
         </div>
-        <div class=content tabindex=10>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_castle.jpg></div>
           </div>
@@ -194,7 +194,7 @@
             <div class="back_foot date">2007</div>
           </div>
         </div>
-        <div class=content tabindex=11>
+        <div class=content>
           <div class=frontface>
             <div class=image><img src=port_comic.jpg></div>
           </div>
@@ -298,7 +298,12 @@
       <p>&copy;Kyla Vana 2015</p>
     </div>
     <script type=text/javascript>
-      $(document).ready(function(){var n;$(".content").children(".backface").children(".back_link").mousedown(function(){n=$(this).parent(".backface").parent(".content").children(".frontface").children(".image"),$("body").prepend('<div class="lightbox"></div>'),$(".lightbox").height($(window).height()),$(n).clone().addClass("expand").prependTo("body")}),$(document).on("click",".lightbox",function(){$(this).remove(),$(".expand").remove()}),$(document).on("click",".expand",function(){$(".lightbox").remove(),$(this).remove()});});
+      $(document).ready(function(){var n;$(".content").children(".backface").children(".back_link").mousedown(function(){n=$(this).parent(".backface").parent(".content").children(".frontface").children(".image"),$("body").prepend('<div class="lightbox"></div>'),$(".lightbox").height($(window).height()),$(n).clone().addClass("expand").prependTo("body")}),$(document).on("click",".lightbox",function(){$(this).remove(),$(".expand").remove()}),$(document).on("click",".expand",function(){$(".lightbox").remove(),$(this).remove()});
+      $(".content").click(function() {
+      $(".content").not(this).removeClass('doflip');
+      $(this).addClass('doflip');
+  });
+      });
     </script>
     <!--[if lt IE 9]><script type="text/javascript">  
 $(document).ready(function(){	
