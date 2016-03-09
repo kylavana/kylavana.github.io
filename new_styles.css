@@ -265,13 +265,11 @@ text-align:right;
   transition: all .3s ease
 }
 
-.content:hover {
-  cursor: pointer;
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px)
+.content:hover{
+opacity:.75;
 }
-.doflip{
-    cursor: auto;
+.content.doflip{
+ opacity:1;
 }
 
 .doflip .frontface{
