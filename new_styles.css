@@ -272,15 +272,8 @@ text-align:right;
   transform: translateY(-5px)
 }
 
-.content:focus {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  cursor: pointer;
-  outline: 0
-}
-
-.content:focus .frontface {
-  visibility: hidden
+.doflip .frontface{
+  visibility:hidden;
 }
 
 .backface {
@@ -298,7 +291,16 @@ text-align:right;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: 'Roboto Slab', serif
+  font-family: 'Roboto Slab', serif;
+   -webkit-transform: rotateY(180deg);
+           transform: rotateY(180deg);
+}
+.doflip .backface{
+  visibility:visible;
+   -webkit-transform: rotateY(0deg);
+           transform: rotateY(0deg);
+  -webkit-transition:all .3s ease;
+  transition: all .3s ease;
 }
 
 @media only screen and (min-width:800px) {
