@@ -267,9 +267,11 @@ text-align:right;
 
 .content:hover {
   cursor: pointer;
-  box-shadow: 0 1px 3px #666;
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px)
+}
+.doflip{
+    cursor: auto;
 }
 
 .doflip .frontface{
