@@ -258,38 +258,6 @@ text-align:right;
   }
 
 /*////PORTFOLIO////*/
-/*
-red: #F44040
-blue: #35ACEF
-purple: #AA3FAA
-*/
-
-body {
-  margin: 0;
-  font-family: Verdana, Geneva, sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Lucida Bright", Georgia, serif;
-}
-
-.container {
-  max-width: 320px;
-  margin: 0 auto;
-  height: auto;
-}
-
-.container:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .container-hide {
   height: 0;
   overflow: hidden;
@@ -360,7 +328,7 @@ h6 {
 }
 
 .backface h2 {
-  font-family: Verdana, Geneva, sans-serif;
+    font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   font-size: 1em;
 }
@@ -423,6 +391,9 @@ h6 {
 .lightbox-text h1,
 .lightbox-text h2 {
   margin: 0;
+}
+.lightbox-text h2 {
+ font-size: 1.1em;
 }
 
 .lightbox-image {
