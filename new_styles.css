@@ -520,19 +520,21 @@ text-align:right;
 }
 
 /*////ABOUT ME////*/
+  .cv_left,
+  .cv_right {
+    width: 100%
+  }
+.cv_left {
+  padding-left: 0
+}
+.cv_right {
+  padding-right: 0
+}
 .cv_left h3,
 .cv_right h3 {
   margin-top: 0;
   color: #35ACEF;
-  text-align: center
-}
-
-.cv_left {
-  padding-left: 0
-}
-
-.cv_right {
-  padding-right: 0
+  text-align: center;
 }
 
 .cv_foot,
@@ -558,40 +560,6 @@ text-align:right;
   margin-top: 10px;
   margin-bottom: 20px
 }
-
-@media only screen and (min-width:600px) {
-  .cv_left,
-  .cv_right {
-    width: 100%
-  }
-}
-
-@media only screen and (min-width:800px) {
-  .cv_left h3,
-  .cv_right h3 {
-    text-align: left
-  }
-  .cv_left {
-    width: 50%;
-    display: table-cell;
-    border-left: 1px solid #eee;
-    padding-left: 20px
-  }
-  .cv_right {
-    width: 50%;
-    display: table-cell;
-    padding-right: 20px
-  }
-  .cv_more {
-    position: absolute;
-    bottom: 25%;
-    text-align: center;
-    font-size: .9em;
-    margin-top: 0;
-    margin-bottom: 0
-  }
-}
-
 .cv_more a {
   display: inline-block;
   margin-top: 20px;
