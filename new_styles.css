@@ -49,7 +49,7 @@ h3 {
 }
 
 .container-hide {
-  height: 0;
+  height: 0px !important;
   overflow: hidden;
 }
 
