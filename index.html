@@ -463,10 +463,10 @@
       </div>
     </div>
     <div class=hr></div>
-    <div class="full cont_head">
-      <h1  id='contact' >Contact me</h1></div>
-    <div class=cont_container>
       <div class=container>
+      <div class="full cont_head">
+      <h1  id='contact' >Contact me</h1>
+      </div>
         <div class="one-fourth contact_col">
           <a href="mailto:kyla.extra@gmail.com"><img src=ico_mail.svg>
             <div><span class=cont_link>email</span></div>
@@ -487,7 +487,6 @@
             <div><span class=cont_link>codepen</span></div>
           </a>
         </div>
-      </div>
     </div>
     <div class=footer>
       <p>&copy;Kyla Vana 2016</p>
@@ -509,7 +508,6 @@ $(document).ready(function() {
     //show lightbox
     window.scrollTo(0, 0);
     $('.container').addClass('container-hide');
-     $('.cont_container').addClass('container-hide');
      $('.footer').addClass('container-hide');
       $(this).siblings('.lightbox').addClass('expand');
   });
@@ -519,7 +517,6 @@ $(document).ready(function() {
     $('.lightbox.expand').removeClass('expand');
     $('.lightbox-image').children('img').detach();
     $('.container.container-hide').removeClass('container-hide');
-    $('.cont_container.container-hide').removeClass('container-hide');
     $('.footer.container-hide').removeClass('container-hide');
     window.scrollTo(0, userscroll);
   });
