@@ -361,8 +361,6 @@ text-align:right;
   font-size: 16px;
   padding: 10px;
   box-sizing: border-box;
-  -webkit-transition: none 0s ease;
-  transition: none 0s ease;
   overflow: hidden;
 }
 
@@ -371,8 +369,6 @@ text-align:right;
   height: auto;
   min-height: 100vh;
   opacity: 1;
-  -webkit-transition: opacity .5s ease-out;
-  transition: opacity .5s ease-out;
 }
 
 .lightbox-content {
@@ -417,8 +413,6 @@ text-align:right;
   cursor: pointer;
   color: white;
   margin: 0;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
 }
 
 .lightbox .close:hover {
