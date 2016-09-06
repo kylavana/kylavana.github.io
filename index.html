@@ -508,8 +508,10 @@ $(document).ready(function() {
 
     //show lightbox
     window.scrollTo(0, 0);
-    $(this).siblings('.lightbox').addClass('expand');
     $('.container').addClass('container-hide');
+     $('.cont_container').addClass('container-hide');
+     $('.footer').addClass('container-hide');
+      $(this).siblings('.lightbox').addClass('expand');
   });
 
   //close lightbox
@@ -517,6 +519,8 @@ $(document).ready(function() {
     $('.lightbox.expand').removeClass('expand');
     $('.lightbox-image').children('img').detach();
     $('.container.container-hide').removeClass('container-hide');
+    $('.cont_container.container-hide').removeClass('container-hide');
+    $('.footer.container-hide').removeClass('container-hide');
     window.scrollTo(0, userscroll);
   });
 
