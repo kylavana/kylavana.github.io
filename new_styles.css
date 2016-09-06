@@ -425,7 +425,12 @@ text-align:right;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-
+.back_link2{
+  color:white;
+}
+.back_link2:hover{
+  font-weight:bold;
+}
 
 /*big phone*/
 
