@@ -514,7 +514,7 @@ text-align:right;
   }
   .lightbox-image img {
     max-height: 400px;
-    max-width: none;
+    max-width: 600px;
     width: auto;
   }
 }
