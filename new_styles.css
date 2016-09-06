@@ -256,6 +256,10 @@ text-align:right;
   }
 
 /*////PORTFOLIO////*/
+.portfolio_cont{
+ margin-bottom:30px; 
+ margin-top:20px;'
+}
 .container-hide {
   height: 0;
   overflow: hidden;
@@ -416,61 +420,20 @@ text-align:right;
 }
 
 /*big phone*/
-
 @media only screen and (min-width: 600px) {
-  .container {
-    max-width: none;
-    width: 480px;
-  }
-  .one-fourth {
-    width: 50%;
-  }
-  .one-third {
-    width: 50%;
-  }
-  .one-half {
-    width: 50%;
-  }
-  .two-thirds {
-    width: 50%;
-  }
-  .three-fourths {
-    width: 50%;
-  }
+
 }
 
 
 /*tablet*/
-
 @media only screen and (min-width: 800px) {
-  .container {
-    max-width: none;
-    width: 768px;
-  }
-  .one-fourth {
-    width: 25%;
-  }
-  .one-third {
-    width: 33%;
-  }
-  .one-half {
-    width: 50%;
-  }
-  .two-thirds {
-    width: 67%;
-  }
-  .three-fourths {
-    width: 75%;
-  }
+  .portfolio_cont{
+ margin-top:90px;'
+}
 }
 
-
 /*desktop*/
-
 @media only screen and (min-width: 1000px) {
-  .container {
-    width: 960px;
-  }
   .lightbox {
     display: -webkit-box;
     display: -webkit-flex;
