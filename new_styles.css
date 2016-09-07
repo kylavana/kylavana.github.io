@@ -54,6 +54,7 @@ h3 {
 
 .container-hide {
   height: 0px !important;
+  min-height: 0px !important;
   margin: 0px !important;
   overflow: hidden;
 }
