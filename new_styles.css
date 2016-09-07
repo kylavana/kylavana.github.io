@@ -274,7 +274,7 @@ text-align:right;
   margin-bottom:20px;
   opacity:0;
 }
-#port > .one-third > div:nth-of-type(1){
+#port > div:nth-of-type(1) > div:nth-of-type(1){
   -webkit-animation: fadein 1s 1s 1 ease forwards;
   animation: fadein 1s 1s 1 ease forwards
 }
