@@ -377,7 +377,7 @@ text-align:right;
   position: absolute;
   left: 0;
   top: 0;
-  background: #f8465f;;
+  background: #f8465f;
   opacity: 0;
   z-index: -1;
   color: white;
@@ -439,13 +439,14 @@ text-align:right;
   cursor: pointer;
   color: white;
   margin: 0;
-    -webkit-transition: transform .2s ease;
-    transition: transform .2s ease;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
 }
 
 .lightbox .close:hover {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+background: white;
+    color: #f8465f;
+    border-radius: 3px;
 }
 .back_link2{
   color:white;
