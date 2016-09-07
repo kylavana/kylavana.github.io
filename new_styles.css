@@ -272,6 +272,9 @@ text-align:right;
 }
 .content{
   margin-bottom:20px;
+  opacity:0;
+  -webkit-animation: fadein 1s 1s 1 ease forwards;
+  animation: fadein 1s 1s 1 ease forwards
 }
 .content-wrap {
   cursor: pointer;
