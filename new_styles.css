@@ -611,47 +611,18 @@ text-align:right;
 
 /*////CONTACT////*/
 
-.cont_container {
-  height: auto;
-  padding-top: 0;
-  margin-bottom: 50px
-}
-
-.cont_container .container {
-  position: static;
-  top: 0;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0)
-}
-
-@media only screen and (min-width:800px) {
-  .cont_container {
-    height: calc(100% - 310px);
-    min-height: 300px;
-    padding-top: 100px
-  }
-  .cont_container .container {
-    position: relative;
-    top: 30%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%)
-  }
-}
-
-.cont_head {
-  text-align: center;
-  margin-bottom: 20px
-}
-
-.cont_head h1 {
-  margin-bottom: 0;
+.cont_link {
+  padding: 2px 20px;
+  -webkit-transition: border.2s ease;
+  transition: border.2s ease;
   display: inline-block;
-  border-top: 3px solid #333;
-  text-align: center
+  font-size: 1.25em;
 }
-
+.contact_col:hover {
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  transform: translateY(-10px)
+}
 .contact_col {
   width: 50%;
   text-align: center;
@@ -662,54 +633,21 @@ text-align:right;
   -ms-transform: translateY(0);
   transform: translateY(0)
 }
-
 .contact_col a {
   text-decoration: none;
   color: #6a6a6a;
   -webkit-transition: color .2s ease;
-  transition: color .2s ease
+  transition: color .2s ease;
+  display:block;
 }
-
 .contact_col a:hover {
   color: #8CC63E
 }
-
 .contact_col img {
   width: 50%;
-  margin-bottom: 10px;
   border: none;
   outline: 0
 }
-
-@media only screen and (min-width:800px) {
-  .cont_container {
-    margin-bottom: 0
-  }
-  .contact_col {
-    width: 25%
-  }
-  .contact_col img {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 10px;
-    border: none;
-    outline: 0
-  }
-}
-
-.cont_link {
-  border: 1px solid #6a6a6a;
-  padding: 2px 20px;
-  -webkit-transition: border.2s ease;
-  transition: border.2s ease
-}
-
-.contact_col:hover {
-  -webkit-transform: translateY(-10px);
-  -ms-transform: translateY(-10px);
-  transform: translateY(-10px)
-}
-
 .contact_col a:hover .cont_link {
   border: 1px solid #8CC63E
 }
@@ -733,3 +671,19 @@ text-align:right;
   vertical-align: middle;
   color: #888
 }
+@media only screen and (min-width:800px) {
+  .cont_container {
+    margin-bottom: 0
+  }
+  .contact_col {
+    width: 25%
+  }
+  .contact_col img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+    border: none;
+    outline: 0
+  }
+}
+
