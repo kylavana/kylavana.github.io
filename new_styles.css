@@ -22,24 +22,28 @@ h3 {
 .hr {
   border-top: 1px solid #eee;
   width: 100%;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-.hr:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 10px;
-  border-bottom: 1px solid #eee
 }
 
 .container {
   max-width: 320px;
   margin: 0 auto;
-  height: auto
+  height: auto;
+}
+.flex_container{
+      min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .container:after {
@@ -121,21 +125,23 @@ h3 {
   text-align:center;
 }
   .header_name li {
+    margin:0;
+    padding:0;
     margin-top: 3px;
     font-size: 11px;
     display: inline-block;
     color: #777;
-    opacity: 0
+    opacity: 1;
   }
 .header_name li:first-of-type {
   color: #333
 }
 .header_name li:not(:last-of-type):after {
   content: "·";
-  margin-left: 2px;
-  margin-right: 2px
+  margin-left: 3px;
+  margin-right:3px
 }
-  .header_name li:nth-of-type(1) {
+/*.header_name li:nth-of-type(1) {
     opacity: 1
   }
   .header_name li:nth-of-type(2) {
@@ -149,7 +155,7 @@ h3 {
   .header_name li:nth-of-type(4) {
     -webkit-animation: fadein 1s 3s 1 ease forwards;
     animation: fadein 1s 3s 1 ease forwards
-  }
+  }*/
 
 .header_nav{
   margin:0;
@@ -505,9 +511,10 @@ text-align:right;
 }
 .cv_left h3,
 .cv_right h3 {
-  margin-top: 0;
-  color: #35ACEF;
-  text-align: center;
+  margin: 0;
+  color: #5dbfea;
+  font-size:2em;
+  font-weight:lighter;
 }
 
 .cv_foot,
@@ -572,14 +579,14 @@ text-align:right;
 }
 
 .cv_img {
-  text-align: center;
-  position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .cv_img img {
-  height: 70px;
-  width: 70px;
+  height: 40px;
+  width: 40px;
+  float:left;
+  margin-right: 5px;
 }
 
 .creative {
@@ -596,26 +603,6 @@ text-align:right;
   display: table-cell;
   padding-left: 5px;
   vertical-align: middle;
-}
-
-.cv_img:before {
-  position: absolute;
-  content: "";
-  border-bottom: 1px solid #eee;
-  left: -40px;
-  height: 35px;
-  width: 50%;
-  top: 0;
-}
-
-.cv_img:after {
-  position: absolute;
-  content: "";
-  border-bottom: 1px solid #eee;
-  right: -40px;
-  top: 0;
-  height: 35px;
-  width: 50%;
 }
 
 .cv_group p {
