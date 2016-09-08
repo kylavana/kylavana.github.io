@@ -544,8 +544,9 @@ i.icon-dl:after{
 .cv_right h3 {
   margin: 0;
   color: #5dbfea;
-  font-size:2em;
+  font-size:2.2em;
   font-weight:lighter;
+  line-height:1.2em;
 }
 
 .cv_foot,
@@ -601,7 +602,9 @@ i.icon-dl:after{
 }
 
 .cv_list .cv_title {
-  font-weight: 700
+  font-weight: 700;
+  text-align: center;
+  background: #f4f4f4;
 }
 
 .cv_date {
@@ -625,15 +628,14 @@ i.icon-dl:after{
 }
 
 .cv_img_small {
-  height: 30px;
-  width: 30px;
-  display: table-cell;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
 }
 
 .creative_header {
-  display: table-cell;
-  padding-left: 5px;
-  vertical-align: middle;
+    display: block;
+    padding-bottom: 5px;
 }
 
 .cv_group p {
