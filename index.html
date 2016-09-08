@@ -503,6 +503,23 @@ $(document).ready(function() {
     $('.container').addClass('container-hide');
      $('.footer').addClass('container-hide');
       $(this).siblings('.lightbox').addClass('expand');
+      
+      //flexbox fix for ie10/11
+var ms_ie = false;
+    var ua = window.navigator.userAgent;
+    var old_ie = ua.indexOf('MSIE ');
+    var new_ie = ua.indexOf('Trident/');
+    if ((old_ie > -1) || (new_ie > -1)) {
+        ms_ie = true;
+    };
+    if ( ms_ie ) {
+        //IE specific code goes here
+  $('.lightbox.expand').css('height', '100vh');
+$(window).resize(function(){
+  $('.lightbox.expand').css('height', '100vh');
+  });
+      
+    };
   });
 
   //close lightbox
@@ -527,16 +544,11 @@ var ms_ie = false;
     if ( ms_ie ) {
         //IE specific code goes here
 var flexheight;
-var lightboxheight;
 flexheight = $('.flex_container').height() + 'px';
-lightboxheight = '100vh';
   $('.flex_container').css('height', flexheight);
-  $('.lightbox.expand').css('height', lightboxheight);
 $(window).resize(function(){
 flexheight = $('.flex_container').height() + 'px';
-lightboxheight = $('.lightbox.expand').height() + 'px';
   $('.flex_container').css('height', flexheight);
-  $('.lightbox.expand').css('height', lightboxheight);
   });
       
     };
