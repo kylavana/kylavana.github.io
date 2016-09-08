@@ -436,11 +436,69 @@ background: white;
     color: #f8465f;
     border-radius: 3px;
 }
-.back_link2{
+
+.lightbox-link{
+  margin-left:5px;
+  background:none;
+  display:inline-block;
+  padding:7px;
+  box-sizing:border-box;
+  border-radius:3px;
   color:white;
+  border:1px solid white;
+  -webkit-transition:all .3s ease-out;
+  transition: all .3s ease-out;
+  text-decoration:none;
 }
-.back_link2:hover{
-  font-weight:bold;
+.lightbox-link:hover{
+  color:#f8465f;
+  background:white;
+}
+.lightbox-link i{
+  position:relative;
+  font-style:normal;
+  font-size:2em;
+  line-height:0;
+}
+.lightbox-link span{
+  margin-left:1.6em;
+}
+i.icon-link:before{
+    position:absolute;
+  content:"☍";
+  top:.75em;
+   -webkit-transition:-webkit-transform .3s ease-in;
+   transition:-webkit-transform .3s ease-in;
+   transition:transform .3s ease-in;
+   transition:transform .3s ease-in, -webkit-transform .3s ease-in;
+   -webkit-transform:rotate(0deg);
+           transform:rotate(0deg);
+}
+i.icon-dl:before{
+   position:absolute;
+  content:"☁";
+  font-size:.8em;
+    top:.9em;
+}
+i.icon-dl:after{
+   position:absolute;
+  content:"↓";
+  font-size:.7em;
+    top:.95em;
+  left:.25em;
+  font-size:.75em;
+     -webkit-transition:-webkit-transform .3s ease-in;
+     transition:-webkit-transform .3s ease-in;
+     transition:transform .3s ease-in;
+     transition:transform .3s ease-in, -webkit-transform .3s ease-in;
+}
+.lightbox-link:hover i.icon-link:before{
+  -webkit-transform:rotate(180deg);
+          transform:rotate(180deg);
+}
+.lightbox-link:hover i.icon-dl:after{
+  -webkit-transform:translateY(4px);
+          transform:translateY(4px);
 }
 
 /*big phone*/
