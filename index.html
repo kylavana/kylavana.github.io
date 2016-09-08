@@ -555,7 +555,17 @@ flexheight = $('.flex_container').height() + 'px';
   });
       
     };
-});
+
+//animate portfolio
+$(document).ready(function(){
+  $( ".content" ).each(function() {
+    var delay = Math.floor((Math.random() * 5) + 1)*100;
+   $( this).delay(delay).fadeTo( 400, 1, function() {
+    // Animation complete.
+  });
+  });//each
+});//doc ready
+});//end doc ready
     </script>
     <!--[if lt IE 9]><script type="text/javascript">  
 $(document).ready(function(){	
