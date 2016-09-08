@@ -527,11 +527,16 @@ var ms_ie = false;
     if ( ms_ie ) {
         //IE specific code goes here
 var flexheight;
+var lightboxheight;
 flexheight = $('.flex_container').height() + 'px';
+lightboxheight = $('.lightbox.expand').height() + 'px';
   $('.flex_container').css('height', flexheight);
+  $('.lightbox.expand').css('height', lightboxheight);
 $(window).resize(function(){
 flexheight = $('.flex_container').height() + 'px';
+lightboxheight = $('.lightbox.expand').height() + 'px';
   $('.flex_container').css('height', flexheight);
+  $('.lightbox.expand').css('height', lightboxheight);
   });
       
     };
