@@ -624,7 +624,7 @@ i.icon-dl:after{
 }
 
 .creative {
-  display: table;
+  display: block;
 }
 
 .cv_img_small {
