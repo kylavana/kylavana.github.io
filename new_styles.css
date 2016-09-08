@@ -458,15 +458,25 @@ background: white;
 
 /*desktop*/
 @media only screen and (min-width: 1000px) {
+  .lightbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .lightbox-content {
     max-width: 1200px;
     width: 75%;
     margin:0;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    top: 50%;
-    position: absolute;
+    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -688,4 +698,3 @@ color:white;
     outline: 0
   }
 }
-
