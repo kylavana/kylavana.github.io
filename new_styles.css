@@ -466,31 +466,33 @@ background: white;
 i.icon-link:before{
     position:absolute;
   content:"☍";
-  top:.75em;
+  top:.85em;
    -webkit-transition:-webkit-transform .3s ease-in;
    transition:-webkit-transform .3s ease-in;
    transition:transform .3s ease-in;
    transition:transform .3s ease-in, -webkit-transform .3s ease-in;
    -webkit-transform:rotate(0deg);
            transform:rotate(0deg);
+           -webkit-transform-style: preserve-3d;
 }
 i.icon-dl:before{
    position:absolute;
   content:"☁";
   font-size:.8em;
-    top:.9em;
+    top:1em;
 }
 i.icon-dl:after{
    position:absolute;
   content:"↓";
   font-size:.7em;
-    top:.95em;
+    top:1.1em;
   left:.25em;
   font-size:.75em;
      -webkit-transition:-webkit-transform .3s ease-in;
      transition:-webkit-transform .3s ease-in;
      transition:transform .3s ease-in;
      transition:transform .3s ease-in, -webkit-transform .3s ease-in;
+     -webkit-transform-style: preserve-3d;
 }
 .lightbox-link:hover i.icon-link:before{
   -webkit-transform:rotate(180deg);
