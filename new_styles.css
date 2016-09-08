@@ -475,6 +475,7 @@ background: white;
   .lightbox-content {
     max-width: 1200px;
     width: 75%;
+    margin:0;
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
