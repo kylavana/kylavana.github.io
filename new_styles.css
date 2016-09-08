@@ -239,6 +239,7 @@ text-align:right;
 }
 .content{
   margin-bottom:20px;
+  opacity:0;
 }
 
 .content-wrap {
