@@ -251,7 +251,7 @@ text-align:right;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.front-face{
+.frontface{
     background-color:#f8465f;
 }
 .backface {
