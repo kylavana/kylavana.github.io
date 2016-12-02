@@ -235,11 +235,20 @@ text-align:right;
 /*////PORTFOLIO////*/
 .portfolio_cont{
  margin-bottom:30px; 
- margin-top:20px;'
+ margin-top:20px;
+      	-webkit-column-width: 290px;
+    	   -moz-column-width: 290px;
+    	        column-width: 290px;
+	-webkit-column-gap: 15px;
+	   -moz-column-gap: 15px;
+	        column-gap: 15px;
+  width: 80%;
+	max-width: 960px;
 }
 .content{
-  margin-bottom:20px;
-  opacity:0;
+  margin-bottom:15px;
+    display: inline-block;
+  column-break-inside: avoid;
 }
 
 .content-wrap {
