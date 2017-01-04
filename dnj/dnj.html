@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Dungeons & Javascript</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="charcreate">
+  <div class="header">
+    <h2>Dungeons &amp; Javascript</h2>
+  </div>
+  <div class="create_wrapper">
+  <form>
+    <h3>Create your Hero</h3>
+    <ul>
+      <li>
+        <p>Character name:</p>
+        <input id="charname_input" type="text" name="character_name" placeholder="enter name" value="enter name">
+      </li>
+
+      <li>
+        <button type="button" id="abl_roll">Roll ability scores</button>
+        <div class="magenta"><span>Str: </span><span id="str_score">6</span></div>
+        <div class="magenta"><span>Dex: </span><span id="dex_score">6</span></div>
+        <div class="magenta"><span>Int: </span><span id="int_score">6</span></div>
+        <div class="magenta"><span>Con: </span><span id="con_score">6</span></div>
+      </li>
+
+      <li>
+        <p>Select race:</p>
+        <div class="select_div">
+          <select id="race_pick">
+  <option value="human">Human</option>
+  <option value="elf">Elf</option>
+  <option value="dwarf">Dwarf</option>
+  <option value="halfling">Halfling</option>
+  <option value="orc">Orc</option>
+  </select>
+        </div>
+      </li>
+
+      <li>
+        <p>Select class:</p>
+        <div class="select_div">
+          <select id="class_pick">
+  <option value="Fighter">Fighter</option>
+  <option value="Mage">Mage</option>
+  <option value="Rogue">Rogue</option>
+  </select>
+        </div>
+      </li>
+
+      <li>
+        <p>Select gender:</p>
+        <div class="select_div">
+          <select id="gender_pick">
+  <option value="_m">Male</option>
+  <option value="_f">Female</option>
+  </select>
+        </div>
+      </li>
+
+      <li>
+        <button type="button" id="accept" disabled>Accept</button>
+      </li>
+    </ul>
+  </form>
+  </div>
+</div>
+<!--end char creation-->
+
+<!--main game interface-->
+<div id="toggle" class="chartoggle group" title="Open character sheet">
+  <div class="char_port"></div>
+  <div id="charhud">
+    <ul>
+      <li id="hud_name">charname</li>
+      <li class="magenta">HP: <span class="hud_hp"></span></li>
+      <li class="cyan">SP: <span class="hud_sp"></span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="wrap group">
+  <div class="charscreen">
+    <ul>
+      <li>Level <span id="char_lvl"></span> <span id="char_race"></span> <span id="char_class"></span></li>
+      <li>Exp: <span class="hud_xp"></span></li>
+      <li class="magenta">Hit Points: <span class="hud_hp"></span>/<span class="max_hp"></span></li>
+      <li class="cyan">Spell Points: <span class="hud_sp"></span>/<span class="max_sp"></span></li>
+      <li>Armor Class: <span class="hud_ac"></span></li>
+       <li>Potions: <span class="hud_pot"></span></li>
+      <li>
+        <hr>
+      </li>
+      <li>
+        <div class="magenta "><span>Str: </span><span id="char_str"></span><span class="cyan" id="char_str_b"></span></div>
+        <div class="magenta"><span>Dex: </span><span id="char_dex"></span><span class="cyan" id="char_dex_b"></span></div>
+        <div class="magenta"><span>Int: </span><span id="char_int"></span><span class="cyan" id="char_int_b"></span></div>
+        <div class="magenta"><span>Con: </span><span id="char_con"></span><span class="cyan" id="char_con_b"></span></div>
+      </li>
+      <li>
+        <hr>
+      </li>
+      <li>Atk Bonus: <span class="hud_ab"></span></li>
+      <li class="magenta">Dmg: <span class="hud_dmg"></span></li>
+      <li>Spell Attack Bonus: <span class="hud_sb"></span></li>
+      <li class="cyan">Spell Dmg: <span class="hud_spdmg"></span></li>
+    </ul>
+    <hr>Weapon:<br>
+    <div class="inventory">
+      <select id="weapon_inv">
+        <option value="shortsword">shortsword</option>
+         </select> Offhand:
+      <br>
+      <select id="offhand_inv">
+        <option value="none">none</option>
+         </select> Armor:
+      <br>
+      <select id="armor_inv">
+        <option value="padded">padded</option>
+         </select> Spell:
+      <br>
+      <select id="spell_inv">
+        <option value="none">none</option>
+         </select>
+    </div>
+  </div>
+  <!--end char screen-->
+
+  <div class="gamescreen">
+    <div class="gameview">
+      <div class="room_wrap">
+      <div id="mon" class="door"></div>
+      <p id="room_desc">As you decend down a rickety ladder into the dungeon, the musty smell of cold, wet stone envelopes you. Your eyes adjust to the darkness... a strong-looking wooden door comes into view.</p>
+      </div>
+    </div>
+    <!--end gameview-->
+    <div class="game_opts">
+      <button id="user_open">Open</button>
+      <button id="user_pick">Pick</button>
+      <button id="user_attack">Attack</button>
+      <button id="user_spell">Spell</button>
+      <button id="user_potion">Potion</button>
+      <button id="user_move">Deeper into the dungeon</button>
+    </div>
+  </div>
+  <!--end gamescreen-->
+</div>
+<!--end wrap--> 
+<button id="but_manual"><span>Manual</span></button>
+<div class="manual_wrap">
+  <h4>I.About</h4>
+  <p>Dungeons & Javascript (D&J) is a simple text-based dungeon crawling game with some rogue like features. The goal is to get through as many rooms as possible. Like many rogue likes, D&J cannnot be "beaten" and character death is permanent.</p>
+  <h4>II.Abilities</h4>
+  <p><strong>Strength(Str)</strong> determines you damage and chance to hit with melee attacks. It is also used for forcing doors and chests open.</p>
+  <p><strong>Dexerity(Dex)</strong> determines you damage and chance to hit with ranged attacks. It is also used for picking locks.</p>
+  <p><strong>Intelligence(Int)</strong> determines your maximum amount of spellpoints, and how powerful your spells are.</p>
+  <p><strong>Consitution(Con)</strong> determines your maximum amount of hitpoints.</p>
+<h4>III.Character Race</h4>
+  <p><strong>Humans:</strong> no ability bonus or penalty</p>
+  <p><strong>Dwarves:</strong> +2 Con, -2 Dex</p>
+  <p><strong>Elves:</strong> +2 Int, -2 Con</p>
+  <p><strong>Halfling:</strong> +2 Dex, -2 Str</p>
+  <p><strong>Orcs:</strong> +2 Str, -2 Int</p>
+<h4>IV.Character Class</h4>
+  <p><strong>Fighters</strong> recieve the largest bonus to attack per level, have highest starting hitpoints, and may use any armor or weapons. They cannot use spells.</p>
+  <p><strong>Mages</strong> recieve the largest increase to spellpoints per level, but cannot use martial weapons or armor.  They start with the most spellpoints but the fewest hitpoints</p>
+  <p><strong>Rogues</strong> recieve a moderate bonus to their attack and spellpoints per level.  They cannot use martial weapons or heavy armor. Rogues also get a bonus to their AC.</p>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,638 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  color: #FFF7ED;
+  background: #1D262B;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+em {
+  display: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #FFF7ED;
+  opacity: .3;
+}
+
+a {
+  color: #DB59D0;
+  text-decoration: none;
+}
+a:hover {
+  color: #4488D6;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.magenta {
+  color: #DB59D0;
+}
+
+.cyan {
+  color: #4488D6;
+}
+
+button,
+input,
+select {
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 1em;
+  color: #1D262B;
+  border-radius: 3px;
+  border: 1px solid #FFF7ED;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  padding: 3px;
+}
+button:hover,
+input:hover,
+select:hover {
+  border: 1px solid #4488D6;
+  color: #1D262B;
+}
+button:disabled,
+input:disabled,
+select:disabled {
+  color: #1D262B;
+  border: 1px solid #FFF7ED;
+  cursor: not-allowed;
+  opacity: .3;
+}
+
+button {
+  color: #FFF7ED;
+  cursor: pointer;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #4488D6;
+}
+
+button:disabled,
+.disabled {
+  color: #FFF7ED;
+}
+button:disabled:hover,
+.disabled:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: "Lucida Bright", Georgia, serif;
+  font-weight: bold;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+/*header styles*/
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #FFF7ED;
+  background: #1D262B;
+}
+
+.header h2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.help_link {
+  float: right;
+  margin-top: 6px;
+  display: none;
+}
+
+/*character creation*/
+.charcreate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #1D262B;
+  width: 100%;
+  height: 100vh;
+  z-index: 30;
+  min-height: 600px;
+}
+
+.create_wrapper {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.charcreate form {
+  max-width: 300px;
+  border: 1px solid #FFF7ED;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.charcreate li {
+  margin-bottom: 5px;
+}
+
+.charcreate button,
+.charcreate input,
+.charcreate select {
+  width: 100%;
+}
+
+.charcreate h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/*main game interface*/
+.chartoggle {
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  left: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding-right: 10px;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  box-sizing: border-box;
+  background: #1D262B;
+}
+.chartoggle:hover {
+  border: 1px solid #FFF7ED;
+}
+
+.wrap {
+  position: relative;
+  top: 0;
+  left: -300px;
+  overflow: hidden;
+  width: calc(100% + 300px);
+}
+
+.charscreen {
+  width: 300px;
+  height: 100vh;
+  float: left;
+  border-right: 1px solid #FFF7ED;
+  box-sizing: border-box;
+  padding-top: 90px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 600px;
+  background: #1D262B;
+}
+
+.gamescreen {
+  background: #1D262B;
+  width: 100%;
+  text-align: center;
+}
+
+.char_port {
+  float: left;
+  padding: 5px;
+}
+
+#charhud {
+  float: left;
+  margin-left: 10px;
+}
+
+#hud_name {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.inventory select {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+/*game graphics*/
+.game_opts {
+  position: absolute;
+  bottom: 0px;
+  padding-left: 0px;
+  left: 300px;
+  width: calc(100% - 300px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 20;
+}
+
+.itempopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 50;
+}
+
+.itempopup .itemwrapper {
+  position: absolute;
+  margin: 0;
+  max-width: 600px;
+  height: auto;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10px;
+  border: 1px solid #FFF7ED;
+  background: #1D262B;
+}
+
+.itemwrapper p button {
+  margin-right: 5px;
+}
+
+@-webkit-keyframes imagefade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes imagefade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.roomfade {
+  -webkit-animation: imagefade 1s 1;
+  animation: imagefade 1s 1;
+}
+
+.room_wrap {
+  position: absolute;
+  left: 300px;
+  width: calc(100% - 300px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#room_desc {
+  font-size: 1.35em;
+  font-family: "Lucida Bright", Georgia, serif;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/*Reference sheet*/
+#but_manual {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  z-index: 50;
+  color: #FFF7ED;
+  background: #1D262B;
+  padding: 0;
+}
+#but_manual span {
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  padding: 3px;
+  -webkit-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#but_manual:hover span {
+  background: rgba(0, 0, 0, 0.1);
+  color: #4488D6;
+}
+
+.manual_wrap {
+  position: absolute;
+  top: 0px;
+  right: -400px;
+  z-index: 40;
+  max-width: 400px;
+  height: 100vh;
+  min-height: 600px;
+  background: #FFF7ED;
+  color: #1D262B;
+  padding: 15px;
+  box-sizing: border-box;
+  -webkit-transition: right .3s ease-in;
+  transition: right .3s ease-in;
+  font-weight: normal;
+  overflow-y: scroll;
+}
+.manual_wrap h4 {
+  border-bottom: 1px solid #1D262B;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+.manual_wrap p {
+  font-size: .9em;
+  margin-bottom: 7px;
+  line-height: 1em;
+}
+
+.manual_open {
+  right: 0px;
+}
+
+/*Item ascii art*/
+.item {
+  line-height: .75em;
+  white-space: pre;
+  font-weight: normal;
+  text-align: left;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.shortsword {
+  width: 11em;
+}
+.shortsword:after {
+  content: "       o\a<≡≡≡≡≡≡@xxxO\a\       o";
+}
+
+.longsword {
+  width: 13em;
+}
+.longsword:after {
+  content: "          )\a<≡≡≡≡≡≡≡≡≡|xxxO\a\          )";
+}
+
+.dagger {
+  width: 8em;
+}
+.dagger:after {
+  content: "    I\a<≡≡≡}xx|\a\    I";
+}
+
+.spear {
+  width: 15em;
+}
+.spear:after {
+  content: "<)================@";
+}
+
+.greatsword {
+  width: 14em;
+}
+.greatsword:after {
+  content: "             ⌠\a<≡≡≡≡≡≡≡≡≡]xx|xxx©\a\             ⌡";
+}
+
+.shortbow {
+  width: 6em;
+}
+.shortbow:after {
+  content: "    ]\a\   ‼\a\   ‼\a\  ‼\a<----«\a\  ‼\a\   ‼\a\   ‼\a\    ]";
+}
+
+.longbow {
+  width: 7em;
+}
+.longbow:after {
+  content: "    ╝\a\   ‼\a\   ‼\a\  ‼\a\  ‼\a<-----«\a\  ‼\a\  ‼\a\   ‼\a\   ‼\a\    ╗";
+}
+
+.shield {
+  width: 6em;
+}
+.shield:after {
+  content: "^--^--^\a‼  |  ‼\a‼  |  ‼\a‼  |  ‼\a‼  |  ‼\aV  |  V\a\ V | V\a\  V V\a\   V";
+}
+
+.padded {
+  width: 6em;
+}
+.padded:after {
+  content: "==   ==\a‼ ‼ ‼ ‼\a‼  =  ‼\a\ ‼ : ‼\a\ ‼ : ‼\a\  ===";
+}
+
+.leather {
+  width: 8em;
+}
+.leather:after {
+  content: " ==   ==\a‼  ‼ ‼  ‼\a‼.  =  .‼\a\  ‼ + ‼\a\  ‼ + ‼\a\   ===";
+}
+
+.studdedleather {
+  width: 8em;
+}
+.studdedleather:after {
+  content: " ==   ==\a‼::‼ ‼::‼\a‼:::=:::‼\a\  ‼:+:‼\a\  ‼:+:‼\a\   ===";
+}
+
+.chainmail {
+  width: 8em;
+}
+.chainmail:after {
+  content: " ==   ==\a‼@@‼ ‼@@‼\a‼@@@=@@@‼\a\  ‼@@@‼\a\  ‼@@@‼\a\  ‼@@@‼";
+}
+
+.splintmail {
+  width: 8em;
+}
+.splintmail:after {
+  content: " ==   ==\a‼UU‼ ‼UU‼\a‼UUU=UUU‼\a\  ‼UUU‼\a\  ‼UUU‼\a\  ‼UUU‼\a\   ===";
+}
+
+.platemail {
+  width: 8em;
+}
+.platemail:after {
+  content: "===   ===\a‼  ‼ ‼  ‼\a‼.  =  .‼\a\  ‼_|_‼\a\  ‼   ‼\a\  ‼ + ‼\a\   ===";
+}
+
+.firebolt {
+  width: 8em;
+}
+.firebolt:after {
+  content: "  _____\a\ (     ()\a\ |     |\a\ | ӺѣҐ |\a\ |     |\a\ |_____|\a(_____()";
+}
+
+.lightning {
+  width: 8em;
+}
+.lightning:after {
+  content: "  _____\a\ (     ()\a\ |     |\a\ | ζҐͷ |\a\ |     |\a\ |_____|\a(_____()";
+}
+
+.acidblast {
+  width: 8em;
+}
+.acidblast:after {
+  content: "  _____\a\ (     ()\a\ |     |\a\ | ζҐͷ |\a\ |     |\a\ |_____|\a(_____()";
+}
+
+.fireball {
+  width: 8em;
+}
+.fireball:after {
+  content: "  _____\a\ (     ()\a\ |     |\a\ | Ӻɽѣ |\a\ |     |\a\ |_____|\a(_____()";
+}
+
+.heal {
+  width: 8em;
+}
+.heal:after {
+  content: "  _____\a\ (     ()\a\ |     |\a\ | Ԋӕζ |\a\ |     |\a\ |_____|\a(_____()";
+}
+
+.knock {
+  width: 8em;
+}
+.knock:after {
+  content: "  _____\a\ (     ()\a\ |     |\a\ | ϏͷϾ |\a\ |     |\a\ |_____|\a(_____()";
+}
+
+.magearmor {
+  width: 8em;
+}
+.magearmor:after {
+  content: "  _____\a\ (     ()\a\ |     |\a\ | ɱϧѦ |\a\ |     |\a\ |_____|\a(_____()";
+}
+
+.potion {
+  width: 5em;
+}
+.potion:after {
+  content: " ===\a\ ) (\a\ )~(\a\/   \005c\a\005c___/";
+}
+
+/*portrait ascii art*/
+.char_port {
+  line-height: .75em;
+  white-space: pre;
+  text-align: left;
+  font-weight: normal;
+}
+
+.human_m:after {
+  content: " ~‴‴‴\a( ʘʖʘ)\a\   ~";
+}
+
+.human_f:after {
+  content: "  ≈≈.\a\ ζڄ ڄ\aζ  ϊ )\a\ζ  ~";
+}
+
+.elf_m:after {
+  content: " ~‴‴~\a؆ ὍϊὍ)\a\   -";
+}
+
+.elf_f:after {
+  content: "  .ﺣ.\a\ ؆ﭳ ﭳ\aζ  ϊ )\a\ζ  -";
+}
+
+.dwarf_m:after {
+  content: " ﱎ‴‴‴\a( ಠﱃಠ)\a\   -\a\  ݬζζ";
+}
+
+.dwarf_f:after {
+  content: "  --.\a\ ζڄ ڄ\aζ  ﱃ )\a\ﱎ  -";
+}
+
+.orc_m:after {
+  content: " ~#*#\a{,ಠݢಠ\a\(  _ )\a\  ^ ^";
+}
+
+.orc_f:after {
+  content: "  ~≈.\a\ ζڄ ڄ\aζ, ݢ \a\ζ  _ )\a\  ^ ^";
+}
+
+.halfling_m:after {
+  content: " ~≈≈≈\a( ʘدʘ)\a\   ֊";
+}
+
+.halfling_f:after {
+  content: " ~≈≈~\aζ*ʘدʘ)\a\ζ  ֊";
+}
+
+/*monster ascii art*/
+#mon {
+  line-height: .75em;
+  white-space: pre;
+  margin: 0 auto;
+  text-align: left;
+  width: 100px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.gameover:after {
+  content: '  .-~~~~. \a\ / /     \005c\a\ | | RIP |\a\ |ϡ|     |\a\ | |  †  |\a\ | |     |\a\ | |    ʃ|\a~~~~~~~~~~~~';
+}
+
+.generic:after {
+  content: "\a\a\a\a\a\a\a";
+}
+
+.door:after {
+  content: "   ______\a   / ____ \\\a  / |||||| \\\a  | |||+|| |\a  | |o|||| |\a  | ||+||| |\a_|_||||+|_|_";
+}
+
+.chest:after {
+  content: "      _.---.\a\   _.-      '.\a\ .--.         \005c\a\/    '      _-|\a\|'-._ \005c\ _.-'_.|\a\||-._'|'_.-' ||\a\||   ||| |●| ||\a\||   ||| '∕ .'|\a\| -._|||_.-'_-\a\ '-._'|  _.-\a\     '|.-";
+}
+
+.goblin:after {
+  content: " <~^^^~> ,-.\a\  'ⱷ ⱷ'  | x>\a\  { ∞ }  |/‼\a\  ~.‴.~~   ‼\a\ *  |   *~ ‼\a! .-+-.~~.{≡]";
+}
+
+.skeleton:after {
+  content: "  ~*'*\a\ ( ϱ ϱ)\a\  ~ д \a\  `|…|\a\&---+--&\a‼ --+- '=.\a'= -+-   '={Ϣ\a   '={Ϣ";
+}
+
+.bugbear:after {
+  content: '  ~^~~Λ\a\ /~ ~  }  ~~~.\a{O  O   \005c  VVV}\a( °°   "}  < }\a\ *""I   {  { }\a\ (^^    *~{  }\a\ .~ ~~*      }\a~*|  |  |    /\a\         ~~~*';
+}
+
+.beholder:after {
+  content: "  ʘ  ʘ ʘ\a\  ‼~~‼~‼.\a\ *‼    ‼ *\a(  .~~~.  )\a{   (©)   }\a*~   „   ~*\a\ }       {\a\ *~(''')~*\a\    ^^^";
+}
+
+.lich:after {
+  content: " |ΔΔΔΔ|\a\ =~--~=\a( ~  ~ )\a{(♦)(♦)}\a\ ~    ~\a\ |}⌂⌂{|\a\  .~~. \a\  ''''\a\==(^^)==";
+}
+
+.dragon:after {
+  content: '      Δ  …\a\   .^~"-/∫\a\ ~* Ó}»  /\a\₰∂`      }\a;~;;~…   (>\a\     /    }\a\.~^"^   | (>\a\{ ,~~,  )  }\a\ V    */   }\a\      /~/  (>\a\     /~~/  }';
+}
