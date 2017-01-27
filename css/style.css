@@ -284,7 +284,7 @@ font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",
   position:relative;
 }
 .backface h1:after{
-  content:"&bull;&bull;&bull;";
+  content:"...";
   position:absolute;
     bottom:-1em;
   left:50%;
