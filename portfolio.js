@@ -34,7 +34,7 @@ app.controller('portfolioController', function ($scope) {
       subtitle: "Block-building Web App",
       image:'port_blocks.gif',
       desc:"This web app lets you build simple isometric scenes as with basic block components. The appis powered by Javascript, and the blocks are rendered with 3D css techniques.",
-     link:'http://issuu.com/kyla.v/docs/ib_booklet?workerAddress=ec2-54-224-253-214.compute-1.amazonaws.com',//set to no to hide
+     link:'http://codepen.io/kvana/full/ygjKZB/',//set to no to hide
       link_class:'icon-play',
       link_txt:'Start building!',
     },
