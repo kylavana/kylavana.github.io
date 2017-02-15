@@ -43,9 +43,6 @@
 <div class="warn"><span>(╯︵╰,)<br><span class="txt-italic">Oh noes!</span> It looks like you've disabled javascript - please enable it to see this page as intended.</span></div>
 </noscript>
     
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
-<script src="js/portfolio.js"></script>  
-    
 <div ng-controller="portfolioController" class="container cont-portfolio" id="portfolio">  
 
 <div ng-repeat="content in portfolioItems" class="content">
@@ -173,6 +170,8 @@
 <div><span class="txt-title" ng-controller="yearController">©Kyla Vana  {{date | date:'yyyy'}}</span></div>
 </div>
   
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+<script src="js/portfolio.js"></script>  
 <script async src="js/functions.js"></script>  
 
 </body>
