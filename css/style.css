@@ -11,7 +11,7 @@ green: #ACDD5E
   margin-bottom:15px;
     display: inline-block;
   column-break-inside: avoid;
-    opacity:1;
+    opacity:1 !important;
 }
 .content-wrap {
   cursor: pointer;
