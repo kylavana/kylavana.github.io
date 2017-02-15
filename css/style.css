@@ -22,9 +22,6 @@ green: #ACDD5E
   transition: all 0.5s ease;
   font-size:0;
 }
-.frontface .image{
-    background:#F44040;
-}
 .backface {
   position: absolute;
   top: 0;
