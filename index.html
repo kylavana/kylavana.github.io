@@ -14,8 +14,243 @@
 <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="theme-color" content="#ffffff">-->
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+    <style>
+    body {
+  margin: 0;
+font-family: Cambria,Georgia,serif;
+  background:snow;
+  color:#222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size:1em;
+  font-weight:normal;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration:none;
+  color:#222;
+}
+hr{
+  margin-bottom:20px;
+  padding:0;
+  border:none;
+  border-bottom:1px solid #ccc;
+}
+.txt-title{
+font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+  text-transform:uppercase;
+    font-weight:bold;
+}
+.txt-sm{
+  font-size:1em;
+}
+.txt-md{
+  font-size:1.25em;
+}
+.txt-lg{
+  font-size:1.75em;
+}
+.txt-italic{
+    font-style: italic;
+}
+.container {
+  width: 90%;
+	max-width: 960px;
+	margin: 0px auto;
+    outline:none;
+}
+.cont-portfolio{
+      	-webkit-column-width: 290px;
+      	   -moz-column-width: 290px;
+      	        column-width: 290px;
+	-webkit-column-gap: 15px;
+	   -moz-column-gap: 15px;
+	        column-gap: 15px;
+margin-top:15px;
+        max-width: 400px;
+}
+#header{
+  -webkit-transition: all .3s ease;
+  transition:all .3s ease;
+}
+.cont-header{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.container-hide {
+  height: 0 !important;
+  min-height:0 !important;
+  overflow: hidden;
+  margin:0;
+  padding:0;
+}
+.header-left{
+    display:inline-block;
+  vertical-align:middle;
+  margin-bottom:15px;
+}
+ul.header-right{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+ul.header-right li{
+  margin:0;
+  border:2px solid #222;
+ float:left;
+  margin-left:5px;
+  font-size:4vw;
+}
+ul.header-right:first-child{
+   margin-left:0px;
+}
+ul.header-right li a{
+ float:left;
+    padding:10px;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  		position: relative;
+		overflow: hidden;
+}
+ul.header-right li a:before{
+content: "";
+		position: absolute;
+		z-index: -1;
+		background: #222;
+		height: 0px;
+		width: 0px;
+		border-radius: 50%;
+  top:-120px;
+  left:-120px;
+}
+ul.header-right li a:hover{
+  color:snow;
+  	-webkit-transition: color .2s ease-out .2s;
+  	transition: color .2s ease-out .2s;
+}
+ul.header-right li a:hover:before {
+height:350px;
+  width:350px;
+	-webkit-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+}
+ul.header-side{
+  display:none;
+}
+@media only screen and (min-width: 700px) {
+.cont-portfolio{
+        max-width: 960px;
+}
+  #header{
+     border-bottom:2px solid rgba(255,255,255,0);
+  }
+.cont-header{
+  -webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:row;
+          flex-direction:row;
+}
+ .header-left{
+  margin-bottom:0px;
+}
+  ul.header-right li{
+  font-size:1em;
+}
+ul.header-side{
+  position:fixed;
+  right:0;
+  top:50%;
+  transform:translate(100%,-50%);
+  list-style:none;
+  padding:0;
+  margin:0;
+  transition:transform .2s ease;
+    display:block;
+    z-index: 100;
+}
+ul.header-side-show{
+transform:translate(0%,-50%);
+}
+ul.header-side li{
+  margin-bottom:10px;
+  border: 2px solid #222;
+  width:40px;
+}
+ul.header-side li a{
+  position:relative;
+    display: inline-block;
+}
+ul.header-side li a span{
+  position:absolute;
+width:0px;
+  background:#222;
+  color:snow;
+transform:translate(100%,0%);
+  box-sizing:border-box;
+  padding-top:20px;
+  padding-bottom:20px;
+  line-height:0px;
+  vertical-align:middle;
+  overflow:hidden;
+  transition: transform .3s ease;
+width:100px;
+ text-align:center;
+  white-space:no-break;
+  z-index:-1;
+}
+ul.header-side li a:hover span{
+  display:inline;
+    overflow:show;
+  transform:translate(-140px,0%);
+}
+ul.header-side li:last-child{
+  margin:0;
+}
+ul.header-side li a img{
+  vertical-align:top;
+    background-color: snow;
+}
+}
+.warn{
+  text-align:center;
+  background:#fea56f;
+  border:3px solid #F44040;
+  font-weight:bold;
+  padding:10px;
+  box-sizing:border-box;
+font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+    color:#222;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.content{
+
+    opacity:0;
+}
+
+    </style>
   <title>Kyla Vana - Portfolio</title> 
-      <link rel="stylesheet" href="css/style.css">
+    
 </head>
 
   <body ng-app="app">
@@ -36,6 +271,23 @@
       <li><a href="#about" ><img src="icon_about.svg" onerror="this.onerror=null; this.src='icon_about.png'" width="40" height="40"><span>About me</span></a></li>
       <li><a href="#contact" ><img src="icon_cont.svg" onerror="this.onerror=null; this.src='icon_cont.png'" width="40" height="40"><span>Contact me</span></a></li>
     </ul>
+      
+ <noscript id="deferred-styles">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</noscript>     
+       <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
       
 <!--portfolio app-->
 <div>
