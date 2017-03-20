@@ -105,12 +105,6 @@ else
 /*///SMOOTH SCROLL///*/
 initSmoothScrolling();
 
-function initSmoothScrolling() {
-  if (isCssSmoothSCrollSupported()) {
-    document.getElementById('css-support-msg').className = 'supported';
-    return;
-  }
-
   var duration = 400;
 
   var pageUrl = location.hash ?
