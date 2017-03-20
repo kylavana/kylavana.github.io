@@ -104,7 +104,7 @@ else
 
 /*///SMOOTH SCROLL///*/
 initSmoothScrolling();
-
+function initSmoothScrolling() {
   var duration = 400;
 
   var pageUrl = location.hash ?
