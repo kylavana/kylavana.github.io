@@ -166,11 +166,11 @@ function initSmoothScrolling() {
 
   }
 
-  function isInPageLink(n) {
-    return n.tagName.toLowerCase() === 'a' &&
-        n.hash.length > 0 &&
-        stripHash(n.href) === pageUrl;
-  }
+function isInPageLink(n) {
+  return n && n.tagName.toLowerCase() === 'a' &&
+      n.hash.length > 0 &&
+      stripHash(n.href) === pageUrl;
+}
 
   var count = 0;
   var isInPageLinkRecurse = function recurse (target) {
