@@ -3,18 +3,18 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#ADD261;}
+	.st0{fill:#FAAF40;}
 	.st1{fill:#FFFFFF;}
 	.st2{fill:#232323;}
 </style>
 <rect class="st0" width="150.3" height="150.3"/>
 <rect x="37.6" y="50.1" class="st1" width="75.2" height="50.1"/>
 <g>
-	<path class="st2" d="M75.2,84L37.6,52.7l0-4.5h75.2l0,4.3L75.2,84z M43,52.1l32.2,26.8l32.2-26.8H43z"/>
+	<path class="st2" d="M75.2,84L37.6,52.7v-4.5h75.2v4.3L75.2,84z M43,52.1l32.2,26.8l32.2-26.8C107.4,52.1,43,52.1,43,52.1z"/>
 	
-		<rect x="37.6" y="83.6" transform="matrix(0.7848 -0.6198 0.6198 0.7848 -41.3368 52.1569)" class="st2" width="33.7" height="3.9"/>
+		<rect x="37.6" y="83.6" transform="matrix(0.7848 -0.6198 0.6198 0.7848 -41.3088 52.1402)" class="st2" width="33.7" height="3.9"/>
 	
-		<rect x="93.9" y="68.8" transform="matrix(0.6196 -0.7849 0.7849 0.6196 -30.7103 107.8292)" class="st2" width="3.9" height="33.7"/>
+		<rect x="94" y="68.8" transform="matrix(0.6196 -0.7849 0.7849 0.6196 -30.7582 107.8633)" class="st2" width="3.9" height="33.7"/>
 </g>
 <g>
 	<rect x="10.2" y="85.7" class="st2" width="21.1" height="3.9"/>
