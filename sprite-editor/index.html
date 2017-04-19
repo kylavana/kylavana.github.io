@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>sprite editor</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="toolbar">
+
+  <span class="tool-item"><input type="button" id="btnSave" value="Save PNG"/></span>
+  
+ <span class="tool-item"><input id="btnErase" type="button" value="Erase"></span>
+  
+ <span class="tool-item">Brush color: <input id="btnColor" type="color"></span>
+   
+<span class="tool-item">Transparent color: <input id="btnColor-trans" type="color" value="#ff00ff"></span>
+  
+</div>
+
+<div class="workspace">
+<div class="artboard">
+<div id="widget" class="widget">
+</div>
+
+<div class="img_wrap">
+<span>↓ Right-click and save as</span>
+<div id="img-out"></div>
+</div>
+  
+</div><!--end artboard-->
+  
+</div>
+  <script src='https://github.com/niklasvh/html2canvas/releases/download/0.4.1/html2canvas.js'></script>
+<script src='http://www.nihilogic.dk/labs/canvas2image/base64.js'></script>
+<script src='http://www.nihilogic.dk/labs/canvas2image/canvas2image.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
