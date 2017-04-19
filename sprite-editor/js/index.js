@@ -48,7 +48,7 @@ widget.css("background-color", bg_col);
   };
   
   function fn_buildmap(){
-     for (i = 0; i < img_size*scale; i++) {
+     for (i = 0; i < img_size*img_size; i++) {
 $('#widget').append('<div class="pixel"></div>');    
   }
   };
