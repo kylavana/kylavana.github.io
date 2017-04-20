@@ -91,8 +91,9 @@ function downloadCanvas(link, canvasId, filename) {
     link.href = document.getElementById(canvasId).toDataURL();
     link.download = filename;
 }
-$("#download").click(function(){ 
-    downloadCanvas(this, 'canvas2', 'sprite.png');
+$("#download").click(function(){
+ var savename = prompt("Save file as...", "New Sprite");
+ downloadCanvas(this, 'canvas2', savename + '.png');
 });
   
 });//end all
