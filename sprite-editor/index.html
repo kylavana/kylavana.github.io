@@ -16,9 +16,9 @@
 </head>
 
 <body>
-  <div class="toolbar">
-
-  <span class="tool-item"><input type="button" id="btnSave" value="Save PNG"/></span>
+<div class="toolbar">
+ 
+   <span class="tool-item"><a id="download">Save png</a></span>
   
  <span class="tool-item"><input id="btnErase" type="button" value="Erase"></span>
   
@@ -28,25 +28,18 @@
   
 </div>
 
-<div class="workspace">
+
 <div class="artboard">
-<div id="widget" class="widget">
-</div>
-
-<div class="img_wrap">
-<span>↓ Right-click and save as</span>
-<div id="img-out"></div>
-</div>
-  
+<canvas width="500" height="300" id="canvas"></canvas>
+<canvas width="500" height="300" id="canvas2" title="Preview"></canvas>
+  <div>
+  Scale: x<input type="number" id="scale" value="16" min="1" max="48">
+  Size:<input type="number" id="size" value="16" min="8" max="64">
+  </div>
 </div><!--end artboard-->
-  
-</div>
-  <script src='https://github.com/niklasvh/html2canvas/releases/download/0.4.1/html2canvas.js'></script>
-<!--<script src='http://www.nihilogic.dk/labs/canvas2image/base64.js'></script>
-<script src='http://www.nihilogic.dk/labs/canvas2image/canvas2image.js'></script>-->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>
