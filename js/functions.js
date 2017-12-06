@@ -3,17 +3,20 @@
 
 //open lightbox
 function expand_lb(clicked_el) {
- 
-    userscroll = document.body.scrollTop;
+    userscroll = document.documentElement.scrollTop;
 
     window.scrollTo(0, 0);   
   
   //add expand class
  var lb_el = clicked_el.nextElementSibling;
-   if (lb_el.classList)
-  lb_el.classList.add('expand');
-else
- lb_el.className += ' ' + 'expand';
+   if (lb_el.classList){
+     lb_el.classList.add('expand'); 
+   
+   }else{
+   lb_el.className += ' ' + 'expand';
+ 
+   }
+
   
   //add container hide
   var container = document.querySelectorAll(".container");
@@ -24,7 +27,9 @@ else
 el1.className += ' ' + 'container-hide';
 });  
 
+ fn_load_portimgs(lb_el);
   };
+
   
 //close lightbox
   function close_lb() {
@@ -45,62 +50,40 @@ window.scrollTo(0, userscroll);
 
 };
 
-//add small menu on scroll
+//call window scrolled function
 window.onscroll = function(){
 win_scroll();
-anim_skill_icons();
 };
  
 function win_scroll() {
-  var scroll_top = document.body.scrollTop;
-    var header = document.getElementById("header-side");
+  var scroll_top = (document.documentElement && document.documentElement.scrollTop) || 
+              document.body.scrollTop;
+  var win_height = window.innerHeight;
   
-  if (scroll_top > 40){
-if (header.classList)
-  header.classList.add('header-side-show');
+  var skills = document.querySelectorAll('.skill-pic');
+    for (i = 0; i < skills.length; i++) { 
+      var top = skills[i].offsetTop
+if (top < scroll_top + (win_height/1.5)){
+    if (skills[i].classList)
+  skills[i].classList.add('in-view');
 else
-  header.className += ' ' + 'header-side-show';
-  }else{
-      header.className = header.className.replace(/\bheader-side-show\b/, "");
-  } 
+  skills[i].className += ' ' + 'in-view'; 
+}
+    }
+
 }
 
-/*///ANIMATE ICONS ON SCROLL*/
-function isScrolledIntoView(elem) {
-    var docViewTop = window.scrollY;
-    var docViewBottom = docViewTop + window.innerHeight;
-
-var rect = elem.getBoundingClientRect();
-var elemTop = rect.top + document.body.scrollTop;
+/*///DEFER LOAD///*/
+function fn_load_portimgs(lb){
+  var lb_con = lb.children[0];
+  var lb_img = lb_con.children[1];
+   var lb_a = lb_img.children;
   
-var elemBottom = elemTop + elem.offsetHeight;
-
-return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  for (i = 0; i < lb_a.length; i++) { 
+   var img = lb_a[i].children[0];
+  img.setAttribute("src", img.getAttribute("defer-img"));
+  }
 }
-
-function anim_skill_icons() {
- var elements = document.querySelectorAll('.skill-pic');
-Array.prototype.forEach.call(elements, function(el, i){
-   if (isScrolledIntoView(el) === true) {
-            
-  if (el.classList)
-  el.classList.add('in-view');
-else
-  el.className += ' ' + 'in-view'; 
-        }
-}); 
-  
-   var elements2 = document.querySelectorAll('.footer');
-Array.prototype.forEach.call(elements2, function(el, i){
-   if (isScrolledIntoView(el) === true) {
-            
-  if (el.classList)
-  el.classList.add('footer-grow');
-else
-  el.className += ' ' + 'footer-grow'; 
-        }
-}); 
-};
 
 /*///SMOOTH SCROLL///*/
 initSmoothScrolling();
