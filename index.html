@@ -260,7 +260,7 @@ font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",
     
 </head>
 
-  <body ng-app="app">
+ <body ng-app="app">
 <!--header-->
 <div id="header">
   <div class="container cont-header txt-title txt-md" >
@@ -272,43 +272,15 @@ font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",
     </ul>
   </div>
 </div>
-    
-<ul id="header-side" class="header-side txt-title">
-  <li><a href="#portfolio"><img src="icon_port.svg" onerror="this.onerror=null; this.src='icon_port.png'" width="40" height="40"><span>Portfolio</span></a></li>
-      <li><a href="#about" ><img src="icon_about.svg" onerror="this.onerror=null; this.src='icon_about.png'" width="40" height="40"><span>About me</span></a></li>
-      <li><a href="#contact" ><img src="icon_cont.svg" onerror="this.onerror=null; this.src='icon_cont.png'" width="40" height="40"><span>Contact me</span></a></li>
-    </ul>
-      
- <noscript id="deferred-styles">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</noscript>     
-       <script>
-      var loadDeferredStyles = function() {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement)
-        addStylesNode.parentElement.removeChild(addStylesNode);
-      };
-      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-      else window.addEventListener('load', loadDeferredStyles);
-    </script>
-      
 <!--portfolio app-->
 <div>
-<noscript>
-<div class="warn"><span>(╯︵╰,)<br><span class="txt-italic">Oh noes!</span> It looks like you've disabled javascript - please enable it to see this page as intended.</span></div>
-</noscript>
-    
 <div ng-controller="portfolioController" class="container cont-portfolio" id="portfolio">  
 
 <div ng-repeat="content in portfolioItems" class="content">
       <div class="content-wrap" onclick="expand_lb(this)">
         <div class="frontface">
           <div class="image">
-            <img ng-src="{{content.image}}"></div>
+            <img src='https://kylavana.github.io/port_items/{{content.image_cover}}' alt="portfolio image"/></div>
         </div>
         <!--end front-->
         <div class="backface">
@@ -324,13 +296,15 @@ font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",
       <!--end content-wrap-->
       <div class="lightbox">
         <div class="lightbox-content">
-          <button class="close txt-title" onclick="close_lb()"></button>
-          <div class="lightbox-image" style="background-image:url({{content.image}})"></div>
           <div class="lightbox-text">
+                 <button class="close txt-title" onclick="close_lb()"></button>
             <h1 class="txt-lg txt-title">{{content.title}}</h1>
-            <h2 class="txt-title">{{content.subtitle}}</h2>
-            <p class="txt-md">{{content.desc}}</p>
+            <h2 class="txt-title" style="color:#69656e;">{{content.subtitle}}</h2>
+            <p class="txt-md" style="white-space:pre-wrap;">{{content.desc}}</p>
          <a href={{content.link}} class="lightbox-link"><i class={{content.link_class}}></i><span>{{content.link_txt}}</span></a>
+          </div> 
+          <div class="lightbox-image">
+            <a ng-repeat="i in content.image_set" href='{{i[1]}}' title="{{i[3]}}"><img class="img-defer" defer-img='https://kylavana.github.io/port_items/{{i[0]}}' src="nope" alt="portfolio image"/>{{i[2]}}</a>     
           </div>
         </div>
       </div>
@@ -350,85 +324,92 @@ font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",
   <p class="txt-md aboutme">I'm a professional graphic designer and illustrator with over seven years of experience.  Additionally, I have nearly six years of experience in web design and font-end development. My aesthetic tends towards clean lines, inviting colors and overall less-is-more mentality. I graduated from Miami University (Oxford Ohio) with a Bachelor's degree of Arts in Architecture. After College, I worked in the architectural field for over two years, but ultimately decided to pursue a career in graphic/web design which has allowed me to more fully utilize my creative skills. Through my experience in both fields, I have developed a wide skillset that can bring a unique and fresh perspective to your team or project.</p>
   <h1 class="txt-title txt-lg skillset-title">Skillset</h1>
 <div class="skill-wrapper">
-  <div class="skill-row">
-      <div class="skill-item">
-      <div class="skill-pic"><img src="icon_webdev.svg" onerror="this.onerror=null; this.src='icon_webdev.png'" alt="web development icon" height="100%" width="100%" /></div>
-        <h2 class="txt-title txt-sm">Web Design/Development</h2>
-        <p>With nearly 6 years of experience in front end design and development, I am fluent with HTML, CSS, and Javascript. I have experience working with the jQuery and Angular libraries, as well as CSS preprocessors like SCSS. Additionally, I am familiar with writing php and working with Wordpress and sql databases.</p>
-      </div>
-      <!--end skill-item-->
-       <div class="skill-item">
-       <div class="skill-pic"><img src="icon_dsgn.svg" onerror="this.onerror=null; this.src='icon_dsgn.png'" alt="graphic design icon" height="100%" width="100%" /></div>
+
+        <div class="skill-item">
+       <div class="skill-pic"><img src="https://kylavana.github.io/icon_dsgn.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_dsgn.png'" alt="graphic design icon" height="100%" width="100%"></div>
+         <div class="skill-txt">
         <h2 class="txt-title txt-sm">Illustration</h2>
-        <p>I have done professional illustrations for over 7 years.  My work includes everything from detailed technical illustrations to icons and pixel artwork. I am very experienced with Adobe Photoshop, Adobe Illustrator, GIMP, and Inkscape. </p>
+        <p>I have done professional illustrations for over 7 years.  My work includes everything from detailed technical illustrations to icons and pixel artwork. I am very experienced with Adobe Photoshop, Adobe Illustrator, GIMP, and Inkscape.</p>
+         </div>
       </div>
     <!--end skill-item-->
-  </div>
-  <!--end skill-row-->
-     <div class="skill-row">
+  
        <div class="skill-item">
-       <div class="skill-pic"><img src="icon_illus.svg" onerror="this.onerror=null; this.src='icon_illus.png'" alt="illustration icon" height="100%" width="100%" /></div>
+       <div class="skill-pic"><img src="https://kylavana.github.io/icon_illus.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_illus.png'" alt="illustration icon" height="100%" width="100%"></div>
+         <div class="skill-txt">
         <h2 class="txt-title txt-sm">Graphic Design</h2>
         <p>Posters, booklets, brochures, infographics and icons are just a few types of collateral I have worked on. I am skilled with Adobe InDesign, Adobe Acrobat, and Scribus. Additionally, I have experience working with professional printers to see projects through production.</p>
+         </div>
       </div>
+      <!--end skill-item--> 
+  
+      <div class="skill-item">
+      <div class="skill-pic"><img src="https://kylavana.github.io/icon_webdev.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_webdev.png'" alt="web development icon" height="100%" width="100%"></div>
+        <div class="skill-txt">
+        <h2 class="txt-title txt-sm">Web Development</h2>
+        <p>With nearly 6 years of experience in front end design and development, I am fluent with HTML, CSS, and Javascript. I have experience working with the jQuery and Angular libraries, as well as CSS preprocessors like SCSS. Additionally, I am familiar with writing php and working with Wordpress and sql databases.</p>
+          </div>
+      </div>         
       <!--end skill-item-->
+  
         <div class="skill-item">
-        <div class="skill-pic"><img src="icon_misc.svg" onerror="this.onerror=null; this.src='icon_misc.png'" alt="addition skills icon" height="100%" width="100%" /></div> 
+        <div class="skill-pic"><img src="https://kylavana.github.io/icon_misc.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_misc.png'" alt="addition skills icon" height="100%" width="100%"></div>
+          <div class="skill-txt">
         <h2 class="txt-title txt-sm">Additional Skills</h2>
          <p>Throughout my career, I have developed several additional skills including: Animation (web and flash), 3D modeling (Sketchup) and video editing (Adobe Premier). I am also skilled with traditional media such as charcoal and watercolor.</p>
+          </div>
       </div>
-      <!--end skill-item-->
-    </div>
-<!--emd skill-row-->
-      <!--emd skill-wrapper-->
+      <!--end skill-item--> 
+  
   </div>
-  <!--end section-wrapper-->
+ <!--emd skill-wrapper-->
 </div>
+  <!--end section-wrapper-->
 </div>
 <!--end about container-->
 <hr>
   <!--contact-->
-    <div class="container" id="contact">
+  <div class="container" id="contact">
     <div class="section-wrapper">
       <div class="cont-item-wrapper">
         <div class="cont-item">
           <a href="mailto:kyla.extra@gmail.com">
-         <img src="icon_email.svg" onerror="this.onerror=null; this.src='icon_email.png'" alt="email icon" width="100" height="100">
+         <img src="https://kylavana.github.io/icon_email.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_email.png'" alt="email icon" width="100" height="100">
           <p class="txt-title cont-text">Send me an email</p>
           </a>
         </div>
         <!--emd cont item-->
         <div class="cont-item">
           <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button">
-         <img src="icon_linkedin.svg" onerror="this.onerror=null; this.src='icon_linkedin.png'" alt="linkedin icon" width="100" height="100">
+         <img src="https://kylavana.github.io/icon_linkedin.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_linkedin.png'" alt="linkedin icon" width="100" height="100">
           <p class="txt-title cont-text">LinkedIn</p>
           </a>
         </div>
         <!--emd cont item-->
         <div class="cont-item">
           <a href="https://kylavana.github.io/kyla_vana_resume.pdf">
-         <img src="icon_resume.svg" onerror="this.onerror=null; this.src='icon_resume.png'" alt="resume icon" width="100" height="100">
+         <img src="https://kylavana.github.io/icon_resume.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_resume.png'" alt="resume icon" width="100" height="100">
           <p class="txt-title cont-text">Resume</p>
           </a>
         </div>
         <!--emd cont item-->
         <div class="cont-item">
           <a href="http://issuu.com/kyla.v/docs/kyla_portfolio">
-         <img src="icon_issuu.svg" onerror="this.onerror=null; this.src='icon_issuu.png'" alt="issuu icon" width="100" height="100">
+         <img src="https://kylavana.github.io/icon_issuu.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_issuu.png'" alt="issuu icon" width="100" height="100">
           <p class="txt-title cont-text">issuu</p>
           </a>
         </div>
         <!--emd cont item-->
                <div class="cont-item">
-          <a href="https://codepen.io/kvana/">
-         <img src="icon_codepen.svg" onerror="this.onerror=null; this.src='icon_codepen.png'" alt="codepen icon" width="100" height="100">
+          <a href="https://codepen.io/kvana/public/">
+         <img src="https://kylavana.github.io/icon_codepen.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_codepen.png'" alt="codepen icon" width="100" height="100">
           <p class="txt-title cont-text">Codepen</p>
           </a>
         </div>
         <!--emd cont item-->
               <div class="cont-item">
           <a href="http://www.coroflot.com/kylav/portfolio">
-         <img src="icon_coroflot.svg" onerror="this.onerror=null; this.src='icon_coroflot.png'" alt="Coroflot icon" width="100" height="100">
+         <img src="https://kylavana.github.io/icon_coroflot.svg" onerror="this.onerror=null; this.src='https://kylavana.github.io/icon_coroflot.png'" alt="Coroflot icon" width="100" height="100">
           <p class="txt-title cont-text">Coroflot</p>
           </a>
         </div>
@@ -440,13 +421,13 @@ font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",
 </div>
   <!--end contact container-->
 <div class="footer">
-<div><span class="txt-title" ng-controller="yearController">©Kyla Vana  {{date | date:'yyyy'}}</span></div>
+<div class="date-wrapper"><span class="txt-title date" ng-controller="yearController">©Kyla Vana  {{date | date:'yyyy'}}</span></div>
 </div>
- 
+  
 <script src='js/angular.min.js'></script>
 <script async src="js/functions.js"></script>  
 <script>
-    
+
 // Define the `portfolioApp` module
 var app = angular.module("app", []);
 
@@ -459,104 +440,94 @@ $scope.date = new Date();
 app.controller('portfolioController', function ($scope) {
   $scope.portfolioItems = [
     {
-      title: 'Campus Map',
-      subtitle: 'University of Texas Medical Branch',
-      image:'port_utmb.jpg',
-    image_sm:'port_utmb_sm.jpg',
-      desc:'The UTMB campus infrastructure was severely damaged by flood waters caused by Hurricane Ike. This map illustrates proposed infrastructure upgrades designed to increase energy efficiency and storm resilience. This illustration is used by Affiliated Engineers, Inc. for several of their marketing pieces regarding the UTMB campus, and infrastructure resilience.',
-      link:'/port_utmb_big.jpg',
-      link_class:'icon-pic',
-      link_txt:'View full size',
-    },
-    {
-      title: 'Corporate Website',
-      subtitle: 'Affiliated Engineers, Inc.',
-      image:'port_aeieng.jpg',
-      desc:"Affiliated Engineers, Inc. needed an upgrade of their old, static website which could not be easily maintained. My solution was to write a custom Content Management system in php. The new content management system takes data from AEI's existing databases and uses that information to dynamically populate the website's pages. I also redesigned the look of the website, and made the pages responsive to better support AEI's mobile users.",
-     link:'http://www.aeieng.com/',//set to no to hide
-      link_class:'icon-link',
-      link_txt:'Visit the website',
-    },
-          {
-      title: 'Adapt or Die',
-      subtitle: "Magazine Cover Artwork",
-      image:'port_mag.gif',
-      desc:"Cover artwork featured in Security Technology Executive Magazine's September 2017 issue. The cover story was titled “Functional Risks: Adapt or Die”, and informs the reader about the importance of contestant adaption in the face of changing security threats.",
-     link:'http://securitytechnologyexecutive.epubxp.com/i/870734-sep-oct-2017',//set to no to hide
-      link_class:'icon-link',
-      link_txt:'Read the article',
-    },
-    {
-      title: 'Dungeons & Javascript',
-      subtitle: "Text-based RPG",
-      image:'port_dnj.gif',
-      desc:"Dungeons & Javascript (D&J) is a simple text-based dungeon crawling game with some rogue-like features. The goal is to get through as many rooms as possible.  D&J is written entirely in Javascript, css, and html.  Also... ASCII art!",
-     link:'/dnj/dnj.html',//set to no to hide
-      link_class:'icon-play',
-      link_txt:'Play it!',
-    },
-    {
-      title: 'Absolutely',
-      subtitle: 'Sticker Artwork',
-      image:'port_abso.gif',
-      desc:'Sticker artwork designed as a hand out for participants of the Greenbuild 2010 conference. "Absolutely" refers to absolute metrics when determining the sustainability rating of a structure. This contrasts with relative metrics, which is the more often used (though less accurate) rating method.',
-     link:'no',//set to no to hide
+      title: 'Technical Illustrations',
+      subtitle: 'Visualizing Building and Infrastructure Systems',
+       image_cover:'tech_ill_cover.jpg',
+      image_set: [['port_lurie.jpg', '/port_items/port_lurie_big.jpg', "Mechanical Floor of the Lurie Children's Hospital of Chicago", 'See full size'], ['nrel_redb.jpg', '/port_items/nrel_redb_big.jpg', "Cut-away view of the Energy Systsems Intragration Facility at the National Renewable Energy Laboratory (Golden, CO)", 'See full size'], ['port_utmb.jpg', '/port_items/port_utmb_big.jpg', "Proposed new infrastructure tunnels for the University of Texas Medical Branch (Galveston, TX)", 'See full size']],
+      desc:"These illustrations were done for Affiliated Engineers, Inc. to be used in presentations to prospective clients.  Complex engineered systems are simplified and shown in context, making them more accessible to a non-technical audience.\nAll of the illustrations started as 3D models in Sketchup, post-processing was done in Adobe Illustrator and Photoshop to improve line quality and add depth and texture.",
+      link:'no',
       link_class:'',
       link_txt:'',
     },
-    {
-      title: 'Mechanical Floor',
-      subtitle: "Ann & Robert H. Lurie Children's Hospital of Chicago.",
-      image:'port_lurie.jpg',
-      desc:"An illustration done for Affiliated Engineers Inc. of the mechanical level in the Ann & Robert H. Lurie Children's Hospital of Chicago. The hospital is noteworthy for its vertical orientation (hospitals are almost always laid-out horizontally) and for the complex interaction between structural and HVAC components in the building's mechanical floor.",
-     link:'/port_lurie_big.jpg',//set to no to hide
-      link_class:'icon-pic',
-      link_txt:'View full-size',
+        {
+      title: 'Ads & Brochures',
+      subtitle: 'Various Projects',
+      image_cover:'auto_test_ad_cover.gif',
+      image_set: [['auto_test_ad.gif', '/port_items/auto_test_ad_big.png', 'Engineering Services advertisement in "Automotive Testing Magazine"', 'See full size'], ['recruitment_brch.png', '/port_items/recruitment_brch.pdf', 'College recruiting brochure for Affiliated Engineers, Inc.', 'View the brochure'], ['water_brch.png', '/port_items/water_brch.pdf', 'Water use optimization brochure', 'View the brochure']],
+      desc:"Marketing collateral designed for Affiliated Engineers, Inc.  These pieces represent a collaborative effort – copy was provided by a creative writer, and photos were purchased from professional photographers.  I was drew the icons/illustrations in Adobe Illustrator, and laid everything out in Adobe InDesign.  Additionally, I was responsible for preparing the files for production and working with the professional printers/magazine editors.",
+      link:'no',
+      link_class:'',
+      link_txt:'',
+    },
+       {
+      title: 'Doomhold',
+      subtitle: 'Video Game Development',
+      image_cover:'port_vgame.gif',
+      image_set: [['port_vgame.gif', 'https://codepen.io/kvana/pen/YNYOGo', '', 'Download the demo']],
+      desc:"Doomhold is a Retro action/RPG video game currently in development. I am doing all the programming as well as creating all of the art assets for the project. The demo is currently available for windows 7+.",
+      link:'https://codepen.io/kvana/',
+      link_class:'icon-dl',
+      link_txt:'Download the demo'
+    },
+        {
+      title: 'Traditional Media',
+      subtitle: 'Drawings and Prints',
+      image_cover:'port_fist.gif',
+      image_set: [['port_fist.gif', '/port_items/fistprint_big.jpg', 'Linoleum Print', 'See full size'], ['castle.jpg', '/port_items/caste_big.jpg', 'Cardiff Castle, Wales - Charcoal on paper', 'See full size'], ['eye.jpg', '/port_items/eyeprint_big.jpg', 'Linoleum Print', 'See full size']],
+      desc:"Personal projects done with traditional media, specifically charcoal and linoleum print.  These are two of my favorite media to work with - I enjoy the methodical, reductive process of printmaking, while charcoal is perfect for quick, expressive sketching.",
+      link:'no',
+      link_class:'',
+      link_txt:'',
     },
     {
       title: 'Happy Birthday, FiL!',
-      subtitle: "Digital Booklet",
-      image:'port_bday.gif',
+      subtitle: 'Digital Booklet',
+      image_cover:'fil_anm_cake.gif',
+      image_set: [['fil_anm_cake.gif', 'http://www.aeieng.com/images/misc/fil_bday.html', '', 'View the booklet'], ['fil_anm_stars.gif', 'http://www.aeieng.com/images/misc/fil_bday.html', '', 'View the booklet'], ['fil_anm_brainpwr.gif', 'http://www.aeieng.com/images/misc/fil_bday.html', '', 'View the booklet']],
       desc:"A web-based booklet celebrating the 1-year anniversary of Affiliated Engineers, Inc.'s new knowledge sharing platform (nick-named FiL). The booklet features a user driven page-turning effect (only on desktops) and animation to help bring the illustrations to life. The illustrations were drawn with Adobe Illustrator, and animated by css.",
-     link:'http://www.aeieng.com/images/misc/fil_bday.html',//set to no to hide
+      link:'http://www.aeieng.com/images/misc/fil_bday.html',
       link_class:'icon-link',
       link_txt:'View the booklet',
     },
-    {
-      title: 'Doomhold',
-      subtitle: "Video game development",
-      image:'port_vgame.gif',
-      desc:"Doomhold is a Retro action/RPG video game currently in development. I am doing all the programming as well as creating all of the art assets for the project.  The demo is currently available for windows 7+.",
-     link:'http://kylavana.github.io/doomhold_demo_1.0.0.3.zip',//set to no to hide
-      link_class:'icon-dl',
-      link_txt:'Download the demo',
-    },
-    {
-      title: 'Anger',
-      subtitle: 'Linocut',
-      image:'port_fist.gif',
-      desc:'Personal project - linocut is similar to woodcut in that the design is cut into the linoleum with a chisel. The uncarved areas represent a mirror image of the parts that are to be printed. The surface is then coated with ink, and pressed into paper or fabric. The reductive process was a fun challenge!',
-     link:'no',//set to no to hide
+         {
+      title: 'Infographics',
+      subtitle: 'Visualizing Information',
+      image_cover:'infographic_cover.png',
+      image_set: [['dist_nrg.png', '/port_items/dist_nrg_big.png', 'Advancement of district energy technology', 'See full size'], ['telehealth.png', '/port_items/telehealth_big.jpg', 'Development and decentralization of healthcare delivery in the United States', 'See full size'], ['circle_diag.jpg', '/port_items/circle_diag_big.jpg', 'Workflow diagram - Affiliated Engineers, Inc.', 'See full size']],
+      desc:"The ability to communicate information is becoming increasingly important. Therefore, I try to represent data in my infographics in a clean and approachable manner.",
+      link:'no',
       link_class:'',
       link_txt:'',
     },
-    {
+  {
+      title: 'Graphic Art',
+      subtitle: 'Various Projects',
+      image_cover:'port_abso.gif',
+      image_set: [['port_abso.gif', '/port_items/port_abso.gif', 'Sticker Artwork - tradeshow swag', 'See full size'], ['adapt_or_die.gif', 'http://securitytechnologyexecutive.epubxp.com/i/870734-sep-oct-2017', 'Cover artwork for "Security Technology Executive" Magazine (Sept 2017 issue)', 'Read the magazine'], ['feather_weight.gif', '/port_items/feather_weight.gif', 'Artwork for article about vehicle lightweighting in "Automotive Testing Magazine"', 'See full size'], ['chili_cookoff.png', '/port_items/chili_cookoff_big.gif', 'Artwork for chili cook-off poster', 'See full size']],
+      desc:"Visually impactful artwork designed to grab the viewer's attention.  All pieces were drawn in Adobe Illustrator.",
+      link:'no',
+      link_class:'',
+      link_txt:'',
+    },
+   {
       title: 'Intelligent Buildings',
-      subtitle: "Booklet Design & Illustration",
-      image:'port_ib2.gif',
+      subtitle: 'Booklet Design and Illustration',
+      image_cover:'ib_book.gif',
+      image_set: [['ib_book.gif', 'http://issuu.com/kyla.v/docs/ib_booklet?workerAddress=ec2-54-224-253-214.compute-1.amazonaws.com', 'Cover', 'Read the booklet'], ['ib_book2.jpg', 'http://issuu.com/kyla.v/docs/ib_booklet?workerAddress=ec2-54-224-253-214.compute-1.amazonaws.com', 'Inside spread', 'Read the booklet']],
       desc:"This booklet was created as marketing collateral for Affiliated Engineers Inc.'s Intelligent Building (IB) Group. The IB group specializes in optimizing data to improve building energy efficiency and lower maintenance costs. In addition to designing the layout of the booklet, I also drew all of the icons, illustrations, and infographics.",
-     link:'http://issuu.com/kyla.v/docs/ib_booklet?workerAddress=ec2-54-224-253-214.compute-1.amazonaws.com',//set to no to hide
+      link:'https://codepen.io/kvana/',
       link_class:'icon-link',
-      link_txt:'Read the booklet',
+      link_txt:'Read the booklet'
     },
-    {
-      title: 'Cardiff Castle',
-      subtitle: "Charcoal Sketch",
-      image:'port_castle.jpg',
-      desc:"Charcoal study of Cardiff Castle.  Drawn during a study abroad program I attended during college – I enjoy the looseness of working in charcoal, and a ruined castle provided the perfect subject matter!",
-     link:'no',//set to no to hide
-      link_class:'',
-      link_txt:'',
+ {
+      title: 'Codpen Projects',
+      subtitle: 'Experiments and Demos',
+      image_cover:'codpen_cover.jpg',
+      image_set: [['gen_art.jpg', 'https://codepen.io/kvana/pen/YNYOGo', 'Generative art', 'View the demo'], ['port_dnj.gif', 'https://codepen.io/kvana/pen/PbGaqo', 'Simple RPG built with Javascript', 'View the demo'], ['spr_edit.gif', 'https://codepen.io/kvana/pen/WjrELz', 'Sprite editor built with javascript and <canvas>', 'View the demo']],
+      desc:"Codepen is a great tool for creating demos and learning code, I use it nearly every day to test an idea or learn something new.  These are just a few of the projects I’ve built in Codpen, please visit my profile to see more!",
+      link:'https://codepen.io/kvana/',
+      link_class:'icon-link',
+      link_txt:'View my Profile'
     },
   ];
 });
