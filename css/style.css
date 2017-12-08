@@ -183,7 +183,7 @@ border:1px solid white;
 /*desktop*/
 @media only screen and (min-width: 1000px) {
   .lightbox-content{
-    max-width:900px;
+    max-width:1000px;
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -193,8 +193,8 @@ border:1px solid white;
   .lightbox-text {
   margin-right:50px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 23em;
-          flex: 0 0 23em;
+      -ms-flex: 0 0 27em;
+          flex: 0 0 27em;
   }
   .lightbox-image {
     -webkit-box-flex:1;
