@@ -44,18 +44,14 @@
 }
 
 .backface h1 {
-  margin-bottom:1em;
-  display:inline-block;
-  position:relative;
+margin-bottom: .25em;
+    display: inline-block;
+    position: relative;
 }
-/*.backface h1:after{
-  content:"•••";
-  position:absolute;
-  bottom:-1em;
-  left:50%;
-  -webkit-transform:translateX(-50%);
-          transform:translateX(-50%);
-}*/
+
+.backface h2{
+  color: #333;
+}
 
 .content-wrap:hover .frontface {
   visibility: hidden;
