@@ -48,14 +48,14 @@
   display:inline-block;
   position:relative;
 }
-.backface h1:after{
+/*.backface h1:after{
   content:"•••";
   position:absolute;
   bottom:-1em;
   left:50%;
   -webkit-transform:translateX(-50%);
           transform:translateX(-50%);
-}
+}*/
 
 .content-wrap:hover .frontface {
   visibility: hidden;
