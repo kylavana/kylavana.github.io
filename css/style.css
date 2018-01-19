@@ -510,6 +510,9 @@ box-sizing:border-box;
   z-index:10;
   text-align:center;
 }
+.cont-item:hover{
+
+}
 .cont-item a{
   display:block;
   width:100%;
@@ -523,18 +526,13 @@ box-sizing:border-box;
 }
 .cont-text{
   position:absolute;
-  top:0px;
+  top:100%;
   padding:0;
   margin:0;
 -webkit-transition: all .3s ease;
 transition:all .3s ease;
   width:100%;
     z-index:1;
-  opacity:0;
-}
-.cont-item a:hover .cont-text{
- top: 100%;
-  opacity:1;
 }
 @media only screen and (min-width: 800px) {
   .skill-wrapper{
