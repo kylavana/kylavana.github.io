@@ -116,8 +116,8 @@ margin-bottom:25px;
   display:block;
   color:white;
 }
-.lightbox-image a[title="See full size"]{
-cursor:zoom-in;
+.lightbox-image a{
+  text-decoration:underline;
 }
 .lightbox-image a img {
   width: 100%;
@@ -183,19 +183,11 @@ border:1px solid white;
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
-  -ms-flex-wrap:wrap;
-      flex-wrap:wrap;
   }
   .lightbox-text {
   margin-right:50px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 27em;
-          flex: 0 0 27em;
   }
   .lightbox-image {
-    -webkit-box-flex:1;
-        -ms-flex:1;
-            flex:1;
   }
 }
 /*LIGHTBOX LINKS*/
