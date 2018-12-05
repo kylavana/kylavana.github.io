@@ -256,7 +256,7 @@ height:350px;
          <a href={{content.link}} class="lightbox-link"><i class={{content.link_class}}></i><span>{{content.link_txt}}</span></a>
           </div> 
           <div class="lightbox-image">
-            <div ng-repeat="i in content.image_set"><img class="img-defer" defer-img='https://kylavana.github.io/port_items/{{i[0]}}' src="nope" alt="portfolio image"/><a ng-repeat="i in content.image_set" href='{{i[1]}}' title="{{i[3]}}" target="_blank">{{i[2]}}</a></div>    
+            <div ng-repeat="i in content.image_set"><img class="img-defer" defer-img='https://kylavana.github.io/port_items/{{i[0]}}' src="nope" alt="portfolio image"/><a href='{{i[1]}}' title="{{i[3]}}" target="_blank">{{i[2]}}</a></div>    
           </div>
         </div>
       </div>
