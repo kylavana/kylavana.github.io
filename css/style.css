@@ -127,6 +127,9 @@ margin-bottom:25px;
 .lightbox-image{
   max-width: 100%;
 }
+.lightbox-image img{
+   width:100%;
+}
 
 .lightbox .close {
   background: none;
