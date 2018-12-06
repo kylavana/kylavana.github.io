@@ -115,15 +115,17 @@ height:0px;
 margin-bottom:25px;
   display:block;
   color:white;
-}
-.lightbox-image a{
   text-decoration:underline;
 }
-.lightbox-image a img {
+.lightbox-image a:hover{
+  color:#eeeeee;
+}
+.lightbox-image p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.lightbox-image img {
   width: 100%;
-  height: auto;
-  vertical-align:top;
-   box-shadow:0 0 3px black;
 }
 
 .lightbox .close {
@@ -188,6 +190,7 @@ border:1px solid white;
   margin-right:50px;
   }
   .lightbox-image {
+    max-width:600px;
   }
 }
 /*LIGHTBOX LINKS*/
