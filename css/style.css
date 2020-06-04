@@ -191,9 +191,10 @@ border:1px solid white;
   }
   .lightbox-text {
   margin-right:50px;
-    max-width: 400px;
+   width:50%;
   }
   .lightbox-image {
+    width:50%;
   }
 }
 /*LIGHTBOX LINKS*/
