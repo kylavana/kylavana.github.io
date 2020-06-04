@@ -490,7 +490,7 @@ box-sizing:border-box;
       -ms-flex-direction: row;
           flex-direction: row;
   -ms-flex-pack:distribute;
-      justify-content:space-around;
+      justify-content:center;
   -ms-flex-wrap:ltr;
       flex-wrap:ltr;
    -ms-flex-flow: row wrap;
